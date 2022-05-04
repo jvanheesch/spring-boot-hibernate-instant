@@ -1,5 +1,6 @@
 package com.github.jvanheesch;
 
+import org.hibernate.annotations.Type;
 import org.springframework.data.annotation.CreatedDate;
 import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 
@@ -17,6 +18,7 @@ public class Author {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
     private String name;
+    @Type(type = "org.hibernate.type.InstantType")
     @CreatedDate
     private Instant createdTimestamp;
 
